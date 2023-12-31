@@ -20,20 +20,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>日常记录</title>
+  <title>802.11协议整体概述 - 日常记录</title>
 
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="日常记录">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="本节内容主要是对wi-fi协议（也就是802.11协议）的发展历史进行概要的分析 timeline     title 802.11 协议发展历程     1997 : 802.11     1999 : 802.11a : 802.11b     2003 : 802.11g     2009 : 802.11n (Wi-Fi 4)     2013 : 802.11ac (Wi-Fi 5)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="802.11协议整体概述">
+<meta property="og:url" content="http://example.com/2023/12/31/2023-12-31_wifi_protocol_overview/index.html">
 <meta property="og:site_name" content="日常记录">
+<meta property="og:description" content="本节内容主要是对wi-fi协议（也就是802.11协议）的发展历史进行概要的分析 timeline     title 802.11 协议发展历程     1997 : 802.11     1999 : 802.11a : 802.11b     2003 : 802.11g     2009 : 802.11n (Wi-Fi 4)     2013 : 802.11ac (Wi-Fi 5)">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-31T03:09:59.000Z">
+<meta property="article:modified_time" content="2023-12-31T08:52:20.553Z">
 <meta property="article:author" content="ffwx">
+<meta property="article:tag" content="wlan">
 <meta name="twitter:card" content="summary">
   
   
   
-  
+  <meta name="keywords" content="wlan">
 
   <!-- feed -->
   
@@ -58,8 +63,10 @@
   
 
 
+
+
   <div class='l_body' id='start'>
-    <aside class='l_left' layout=''>
+    <aside class='l_left' layout='post'>
     
 
   
@@ -71,43 +78,126 @@
 
 
 <div class="widgets">
-<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/12/31/2023-12-31_wifi_protocol_overview/"><span class="title">802.11协议整体概述</span></a><a class="item title" href="/2023/12/31/hello-world/"><span class="title">Hello World</span></a></div></widget>
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">802.11协议整体概述</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#802-11-1997"><span class="toc-text">802.11-1997</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#802-11a-1999"><span class="toc-text">802.11a-1999</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#802-11g-2023"><span class="toc-text">802.11g-2023</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#802-11n-2009"><span class="toc-text">802.11n-2009</span></a></li></ol></div></div></widget>
+
+
 
 
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">日常记录</div></a></div></header>
-
-
 
       
 
 
   
 
-<div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/archives">归档</a></nav></div>
-  <div class="post-list post"><a class="post-card post " href="/2023/12/31/2023-12-31_wifi_protocol_overview/">
-<article class="md-text"><h2 class="post-title">802.11协议整体概述</h2><div class="excerpt"><p>本节内容主要是对wi-fi协议（也就是802.11协议）的发展历史进行概要的分析
-timeline
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/wlan%E5%8D%8F%E8%AE%AE/">wlan协议</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/wlan%E5%8D%8F%E8%AE%AE/802-11b/">802.11b</a></div><div id="post-meta">
+    <span>发布于&nbsp;<time datetime="2023-12-31T03:09:59.000Z">2023-12-31</time></span>
+    
+    <span>更新于&nbsp;<time datetime="2023-12-31T08:52:20.553Z">2023-12-31</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>802.11协议整体概述</span></h1>
+<p>本节内容主要是对wi-fi协议（也就是802.11协议）的发展历史进行概要的分析</p>
+<pre class="mermaid">timeline
     title 802.11 协议发展历程
     1997 : 802.11
     1999 : 802.11a : 802.11b
     2003 : 802.11g
     2009 : 802.11n (Wi-Fi 4)
-    2013 : 802.11ac (Wi-Fi 5...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2023-12-31T03:09:59.000Z">2023-12-31</time></span><span class="cap breadcrumb">wlan协议</span></div></article>
-</a><a class="post-card post " href="/2023/12/31/hello-world/">
-<article class="md-text"><h2 class="post-title">Hello World</h2><div class="excerpt"><p>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2023-12-30T16:14:24.832Z">2023-12-31</time></span></div></article>
-</a></div>
-  
+    2013 : 802.11ac (Wi-Fi 5)
+    2019 : 802.11ax (Wi-Fi 6)
+    2024 : 802.11be? (Wi-Fi 7)
+    2028 : 802.11bn? (Wi-Fi 8)</pre>
+
+<h2 id="802-11-1997"><a href="#802-11-1997" class="headerlink" title="802.11-1997"></a>802.11-1997</h2><p>第一版802.11协议， 涉及的内容有</p>
+<ul>
+<li><p>无线局域网架构介绍</p>
+</li>
+<li><p>无线局域网参考模式</p>
+</li>
+<li><p>认证方式</p>
+<ul>
+<li>开放系统认证</li>
+<li>共享密钥认证</li>
+</ul>
+</li>
+<li><p>WEP加密</p>
+</li>
+<li><p>MAC层功能</p>
+<ul>
+<li>MAC架构<ul>
+<li>DCF</li>
+<li>PCF</li>
+</ul>
+</li>
+<li>分片与去分片功能</li>
+<li>多速率支持</li>
+<li>同步（TSF）</li>
+<li>节能机制</li>
+<li>关联与重关联</li>
+</ul>
+</li>
+<li><p>PHY层功能：</p>
+<ul>
+<li>FHSS PHY</li>
+<li>DSSS PHY</li>
+<li>IR PHY</li>
+</ul>
+</li>
+</ul>
+<h2 id="802-11a-1999"><a href="#802-11a-1999" class="headerlink" title="802.11a-1999"></a>802.11a-1999</h2><p>在第一版802.11-1997协议的基础上，新增了支持OFDM PHY层， 其他没有变化</p>
+<ul>
+<li>PHY层<ul>
+<li>OFDM PHY</li>
+</ul>
+</li>
+</ul>
+<h2 id="802-11g-2023"><a href="#802-11g-2023" class="headerlink" title="802.11g-2023"></a>802.11g-2023</h2><p>DSSS PHY层做了扩展，支持5.5M、11M， 同时2.4G支持OFDM PHY</p>
+<ul>
+<li>PHY层功能:<ul>
+<li>HR&#x2F;DSSS PHY</li>
+<li>Extended Rata PHY (ERP)</li>
+</ul>
+</li>
+</ul>
+<h2 id="802-11n-2009"><a href="#802-11n-2009" class="headerlink" title="802.11n-2009"></a>802.11n-2009</h2><p>新增的主要特性：</p>
+<ul>
+<li>40M带宽</li>
+<li>MIMO（最大支持4x4）</li>
+<li>支持A-MSDU和A-MPDU</li>
+<li>支持tx beamforming</li>
+<li>支持STBC</li>
+</ul>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/12/31/hello-world/">Hello World</a></div></section></div>
+
+
+
+
+
 
 
 
