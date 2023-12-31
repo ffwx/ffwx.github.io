@@ -698,7 +698,7 @@ table:not([class]) {
 }
 html {
   font-family: ZFonts, system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
-  font-size: 19.3px;
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -3442,7 +3442,7 @@ details.folding[child=iframe] >div.body {
   display: block;
 }
 .md-text.indent .tag-plugin.tabs .tab-content p:not([class]) {
-  text-indent: calc(0.9999rem * 2);
+  text-indent: calc(0.8125rem * 2);
 }
 .md-text.indent .tag-plugin.tabs .tab-content p:not([class]) a {
   text-indent: 0;
@@ -5119,7 +5119,7 @@ h1.article-title {
   overflow: hidden;
 }
 .md-text.content.indent >p:not([class]) {
-  text-indent: calc(0.9999rem * 2);
+  text-indent: calc(0.8125rem * 2);
   text-align: left;
 }
 .md-text.content.indent >p:not([class]) a {
@@ -5273,7 +5273,7 @@ h1.article-title {
   margin-top: -0.5rem;
 }
 .md-text p {
-  font-size: 0.9999rem;
+  font-size: 0.8125rem;
 }
 .md-text pre {
   -webkit-font-smoothing: auto;
