@@ -19,29 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Large Language ModelsHands-On Large Language Models  Deep LearningDeep Reinforcement Learning: Zero to Hero! GPUtiny-gpu  简介：一个最小 GPU 实现，用于从头开始了解 GPU 的工作原理">
+    <meta name="description" content="开发环境搭建 安装 Linux 操作系统 安装 QEMU 仿真软件 安装 gcc 交叉编译工具链  问题解决qemu audio 错误打印问题 Question: 1234567891011w512@dev-pc ~ [1]&gt; qemu-system-arm -M vexpress-a9pulseaudio: set_sink_input_volume() failedpulseaudio:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="eecs_related_books">
-<meta property="og:url" content="http://example.com/2024/05/12/eecs-related-books/index.html">
+<meta property="og:title" content="ARM 裸机编程实践指南">
+<meta property="og:url" content="http://example.com/2024/06/23/bare-metal-programming-for-arm/index.html">
 <meta property="og:site_name" content="Learning">
-<meta property="og:description" content="Large Language ModelsHands-On Large Language Models  Deep LearningDeep Reinforcement Learning: Zero to Hero! GPUtiny-gpu  简介：一个最小 GPU 实现，用于从头开始了解 GPU 的工作原理">
+<meta property="og:description" content="开发环境搭建 安装 Linux 操作系统 安装 QEMU 仿真软件 安装 gcc 交叉编译工具链  问题解决qemu audio 错误打印问题 Question: 1234567891011w512@dev-pc ~ [1]&gt; qemu-system-arm -M vexpress-a9pulseaudio: set_sink_input_volume() failedpulseaudio:">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://learning.oreilly.com/library/cover/9781098150952/250w/">
-<meta property="article:published_time" content="2024-05-12T14:36:39.000Z">
-<meta property="article:modified_time" content="2024-05-12T15:25:03.335Z">
+<meta property="article:published_time" content="2024-06-23T09:06:36.000Z">
+<meta property="article:modified_time" content="2024-06-23T14:40:41.375Z">
 <meta property="article:author" content="Second">
+<meta property="article:tag" content="arm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://learning.oreilly.com/library/cover/9781098150952/250w/">
 
 
-<link rel="canonical" href="http://example.com/2024/05/12/eecs-related-books/">
+<link rel="canonical" href="http://example.com/2024/06/23/bare-metal-programming-for-arm/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/05/12/eecs-related-books/","path":"2024/05/12/eecs-related-books/","title":"eecs_related_books"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/06/23/bare-metal-programming-for-arm/","path":"2024/06/23/bare-metal-programming-for-arm/","title":"ARM 裸机编程实践指南"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>eecs_related_books | Learning</title>
+<title>ARM 裸机编程实践指南 | Learning</title>
   
 
 
@@ -113,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models"><span class="nav-number">1.</span> <span class="nav-text">Large Language Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning"><span class="nav-number">2.</span> <span class="nav-text">Deep Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU"><span class="nav-number">3.</span> <span class="nav-text">GPU</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">开发环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text">问题解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -164,7 +163,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/12/eecs-related-books/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/23/bare-metal-programming-for-arm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,12 +176,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="eecs_related_books | Learning">
+      <meta itemprop="name" content="ARM 裸机编程实践指南 | Learning">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          eecs_related_books
+          ARM 裸机编程实践指南
         </h1>
 
         <div class="post-meta-container">
@@ -194,7 +193,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-05-12 22:36:39 / 修改时间：23:25:03" itemprop="dateCreated datePublished" datetime="2024-05-12T22:36:39+08:00">2024-05-12</time>
+      <time title="创建时间：2024-06-23 17:06:36 / 修改时间：22:40:41" itemprop="dateCreated datePublished" datetime="2024-06-23T17:06:36+08:00">2024-06-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/arm/" itemprop="url" rel="index"><span itemprop="name">arm</span></a>
+        </span>
     </span>
 
   
@@ -206,13 +214,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="Large-Language-Models"><a href="#Large-Language-Models" class="headerlink" title="Large Language Models"></a>Large Language Models</h2><p><a target="_blank" rel="noopener" href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">Hands-On Large Language Models</a></p>
-<p><img src="https://learning.oreilly.com/library/cover/9781098150952/250w/" alt="Hands-On Large Language Models"></p>
-<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><p><a target="_blank" rel="noopener" href="https://github.com/alessiodm/drl-zh">Deep Reinforcement Learning: Zero to Hero!</a></p>
-<h2 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h2><p><a target="_blank" rel="noopener" href="https://github.com/adam-maj/tiny-gpu">tiny-gpu</a></p>
-<blockquote>
-<p>简介：一个最小 GPU 实现，用于从头开始了解 GPU 的工作原理</p>
-</blockquote>
+    <div class="post-body" itemprop="articleBody"><h2 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h2><ul>
+<li>安装 Linux 操作系统</li>
+<li>安装 QEMU 仿真软件</li>
+<li>安装 gcc 交叉编译工具链</li>
+</ul>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><div class="admonition note"><p class="admonition-title">qemu audio 错误打印问题
+</p><p><strong>Question</strong>:</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">w512@dev-pc ~ [1]&gt; qemu-system-arm -M vexpress-a9</span><br><span class="line">pulseaudio: set_sink_input_volume() failed</span><br><span class="line">pulseaudio: Reason: Invalid argument</span><br><span class="line">pulseaudio: set_sink_input_mute() failed</span><br><span class="line">pulseaudio: Reason: Invalid argument</span><br><span class="line">MESA: error: ZINK: failed to choose pdev</span><br><span class="line">glx: failed to create drisw screen</span><br><span class="line"></span><br><span class="line">sndio: unsupported audio params</span><br><span class="line">sndio: unsupported audio params</span><br><span class="line">audio: Could not create a backend <span class="keyword">for</span> voice `lm4549.out<span class="string">'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Answer</strong></p>
+<p>配置 QEMU 的时候把 pulseaudio(<code>--disable-pa</code>) 和 sndio(<code>--disable-sndio</code>) 特性禁掉，命令如下</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../configure --prefix=~/opt/qemu --target-list=<span class="string">&quot;arm-softmmu aarch64-softmmu i386-softmmu x86_64-softmmu riscv64-softmmu arm-linux-user aarch64-linux-user i386-linux-user x86_64-linux-user&quot;</span> --enable-sdl --enable-debug --disable-pa --disable-sndio</span><br></pre></td></tr></table></figure></p>
+</div>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="">Bare-metal programming for ARM - A hands-on guide</a></li>
+<li><a href="">Bare-metal Boot Code for ARMv8-A Processors</a></li>
+<li><a target="_blank" rel="noopener" href="https://mshrimp.github.io/2020/04/19/Linux%E5%86%85%E6%A0%B8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B-%E5%9F%BA%E4%BA%8EARM64/">Linux内核启动流程-基于ARM64</a></li>
+<li></li>
+</ul>
 
     </div>
 
@@ -221,18 +241,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/arm/" rel="tag"># arm</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/05/12/eecs-related-materials/" rel="prev" title="eecs_related_materials">
-                  <i class="fa fa-angle-left"></i> eecs_related_materials
+                <a href="/2024/06/15/linux-debug-env-build/" rel="prev" title="QEMU调试Linux内核环境搭建">
+                  <i class="fa fa-angle-left"></i> QEMU调试Linux内核环境搭建
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/05/12/useful-tools/" rel="next" title="useful_tools">
-                  useful_tools <i class="fa fa-angle-right"></i>
+                <a href="/2024/06/30/wifi-chip-introduction/" rel="next" title="wifi 芯片基本概念介绍">
+                  wifi 芯片基本概念介绍 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
